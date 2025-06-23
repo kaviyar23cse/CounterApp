@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f6f9fc, #e0f7fa); /* Light mode background */
 }
 
 #root {
@@ -15,16 +16,12 @@ html, body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #f6f9fc, #e0f7fa);
 }
 
-
-
-
-
+/* Dark mode overrides */
 .app-container.dark {
   background: #121212;
-  color: #fff;
+  color: #ffffff;
 }
 
 .content-box {
@@ -33,11 +30,25 @@ html, body {
   padding: 30px 20px;
   box-sizing: border-box;
   text-align: center;
-  background: white; /* Optional */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode content box */
+.app-container.dark .content-box {
+  background: #1e1e1e;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
 
+/* Ensure headings and labels are visible in dark mode */
+.app-container.dark h1,
+.app-container.dark label,
+.app-container.dark .lap-heading {
+  color: #ffffff;
+}
 
+/* Timer text */
 .timer {
   font-size: 48px;
   font-weight: bold;
@@ -88,6 +99,13 @@ html, body {
   text-align: center;
 }
 
+/* Dark mode input styling */
+.app-container.dark .target-input input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
 .lap-heading {
   font-size: 18px;
   margin-bottom: 10px;
@@ -114,6 +132,7 @@ html, body {
   border: 1px solid #cce;
 }
 
+/* Dark mode lap list styling */
 .app-container.dark .lap-scroll li {
   background-color: #2c2c2c;
   color: #fff;
